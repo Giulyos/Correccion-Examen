@@ -5,15 +5,16 @@ public class Controller {
 
     public Controller(){
         view = new View();
-        filas = view.pedirInt("Digite la cantidad de filas");
-        columnas = view.pedirInt("Digite la cantidad de columnas");
+        filas = view.pedirInt("Digite la cantidad de filas: ");
+        columnas = view.pedirInt("Digite la cantidad de columnas: ");
+        estante = new Estante(filas, columnas);
     }
 
     public void run(){
         boolean prueba = true;
         while(prueba == true){
-            view.print("\n1. Imprimir el estante\n2. Guardar un medicamento\n3. Entregar un medicamento\n4. Imprimir estad[isticas\n5. Terminar el programa\n");
-            opcion = view.pedirInt("Elija una opcion: ");
+            view.print("\n\n1. Imprimir el estante\n2. Guardar un medicamento\n3. Entregar un medicamento\n4. Imprimir estadisticas\n5. Terminar el programa\n");
+            opcion = view.pedirInt("\nElija una opcion: ");
             if(opcion == 1){
                 estante.print();
             }if(opcion == 2){
